@@ -68,7 +68,7 @@ export default function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const data = {
-      Date: new Date().toLocaleString(),
+      Date: "'" + new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }),
       Name: formData.get('name') || '',
       Company: formData.get('company') || '',
       Email: formData.get('email') || '',
