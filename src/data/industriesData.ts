@@ -38,25 +38,25 @@ export const industriesData: Record<string, IndustryData> = {
       }
     ]
   },
-  automobile: {
-    id: 'automobile',
-    name: 'AUTOMOBILE',
-    image: '/images/industry_automobile_1781249770549.png',
-    icon: Truck,
-    shortDescription: 'Powering the future of the automobile sector with precision engineering and unmatched reliability.',
-    overview: 'The automotive industry demands high speed, extreme precision, and unyielding safety standards. Sri Veemass Hydraulics supplies state-of-the-art hydraulic components for automotive assembly plants, test rigs, and component manufacturing. Our hydraulic solutions ensure smooth operations from chassis lifting to robotic welding stations.',
+  cement: {
+    id: 'cement',
+    name: 'CEMENT',
+    image: '/images/industry_cement.png',
+    icon: Factory,
+    shortDescription: 'Powering the future of the cement sector with heavy-duty engineering and unmatched reliability.',
+    overview: 'The cement industry operates in extreme conditions involving heavy loads, constant vibration, and abrasive dust. Sri Veemass Hydraulics provides rugged, heavy-duty hydraulic components tailored for kilns, crushers, and material handling systems. Our robust hydraulic solutions guarantee continuous, reliable operation in the harshest cement plant environments.',
     keySolutions: [
       {
-        title: 'Scissor Lift Hydraulics',
-        description: 'Robust cylinders and power units tailored for vehicle lifting and positioning systems.'
+        title: 'Kiln Drive Hydraulics',
+        description: 'High-torque hydraulic systems designed to maintain precise rotation for heavy rotary kilns.'
       },
       {
-        title: 'Test Rig Actuators',
-        description: 'High-frequency actuators for automotive component fatigue testing and quality assurance.'
+        title: 'Crusher Actuators',
+        description: 'Heavy-duty cylinders built to withstand extreme impact forces in limestone crushing operations.'
       },
       {
-        title: 'Press Hydraulics',
-        description: 'Heavy-duty hydraulic systems for sheet metal stamping and body panel forming presses.'
+        title: 'Stacker & Reclaimer Systems',
+        description: 'Reliable hydraulic power packs and cylinders for bulk material handling machinery.'
       }
     ]
   },
@@ -126,13 +126,13 @@ export const industriesData: Record<string, IndustryData> = {
       }
     ]
   },
-  port: {
-    id: 'port',
-    name: 'PORT',
+  marine: {
+    id: 'marine',
+    name: 'MARINE',
     image: '/images/industry_port_1781249834923.png',
     icon: Anchor,
-    shortDescription: 'Powering the future of the port sector with precision engineering and unmatched reliability.',
-    overview: 'Ports operate 24/7, handling massive loads under corrosive marine conditions. Sri Veemass Hydraulics offers marine-grade hydraulic solutions for ship-to-shore cranes, container handlers, and docking systems. Our products feature specialized coatings and sealing technologies to resist saltwater corrosion and ensure maximum uptime.',
+    shortDescription: 'Powering the future of the marine sector with precision engineering and unmatched reliability.',
+    overview: 'Marine environments operate 24/7, handling massive loads under highly corrosive conditions. Sri Veemass Hydraulics offers marine-grade hydraulic solutions for ship-to-shore cranes, container handlers, and docking systems. Our products feature specialized coatings and sealing technologies to resist saltwater corrosion and ensure maximum uptime.',
     keySolutions: [
       {
         title: 'Marine-Grade Cylinders',

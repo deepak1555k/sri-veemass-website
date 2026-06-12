@@ -41,7 +41,7 @@ export const servicesData: Record<string, ServiceData> = {
   'equipment-maintenance': {
     id: 'equipment-maintenance',
     title: 'Hydraulic Equipment Maintenance',
-    image: 'https://plus.unsplash.com/premium_photo-1661335257817-4552acab9656?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8ZW5naW5lZXJpbmclMjBibHVlcHJpbnR8ZW58MHx8fHwxNzgxMTk4OTA0fDA&ixlib=rb-4.1.0&q=80&w=800',
+    image: '/images/maintenance.jpg',
     icon: Activity,
     shortDescription: 'Preventive maintenance and troubleshooting for all hydraulic equipment.',
     overview: 'Unexpected breakdowns cost money. Our preventive maintenance programs are designed to keep your hydraulic equipment operating at peak efficiency. Through regular fluid analysis, filter replacements, and system inspections, we identify potential failures before they happen, extending the lifespan of your valuable machinery.',
@@ -63,7 +63,7 @@ export const servicesData: Record<string, ServiceData> = {
   'cylinder-servicing': {
     id: 'cylinder-servicing',
     title: 'Hydraulic Cylinder Service',
-    image: 'https://images.pexels.com/photos/7568418/pexels-photo-7568418.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+    image: '/images/cylinder_service.jpg',
     icon: Settings,
     shortDescription: 'Expert repair, re-sealing, and complete overhauling of hydraulic cylinders.',
     overview: 'Hydraulic cylinders endure immense stress and wear. We offer complete cylinder repair services, including seal replacement, rod re-chroming, and custom fabrication of damaged components to restore your cylinders to OEM specifications.',
@@ -85,7 +85,7 @@ export const servicesData: Record<string, ServiceData> = {
   'system-design': {
     id: 'system-design',
     title: 'Hydraulic System Design & Installation',
-    image: 'https://plus.unsplash.com/premium_photo-1661761538618-af050f9ef244?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8cG93ZXIlMjBnZW5lcmF0b3J8ZW58MHx8fHwxNzgxMTk4OTA0fDA&ixlib=rb-4.1.0&q=80&w=800',
+    image: '/images/system_design_service.jpg',
     icon: PenTool,
     shortDescription: 'Complete hydraulic system designing, installation and commissioning.',
     overview: 'Whether you are upgrading an existing facility or building a new machine from the ground up, our engineering team can design the perfect hydraulic system. We specialize in creating energy-efficient, reliable hydraulic circuits, selecting the right components, and providing seamless turnkey installation and commissioning.',
@@ -107,7 +107,7 @@ export const servicesData: Record<string, ServiceData> = {
   'repair-overhauling': {
     id: 'repair-overhauling',
     title: 'Repair & Overhauling',
-    image: 'https://plus.unsplash.com/premium_photo-1661515237084-640348f9ed3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8aW5kdXN0cmlhbCUyMG1haW50ZW5hbmNlfGVufDB8fHx8MTc4MTE5ODkwNHww&ixlib=rb-4.1.0&q=80&w=800',
+    image: '/images/repair_overhauling.jpg',
     icon: Wrench,
     shortDescription: 'Comprehensive repair and overhaul services to keep your hydraulic systems running smoothly.',
     overview: 'Our fully equipped repair facility handles everything from minor seal replacements to complete tear-downs and overhauls of heavy hydraulic machinery. We specialize in re-chroming cylinder rods, honing cylinder barrels, and machining custom replacement parts when OEM components are no longer available.',
@@ -129,7 +129,7 @@ export const servicesData: Record<string, ServiceData> = {
   'industrial-automation': {
     id: 'industrial-automation',
     title: 'Industrial Automation',
-    image: 'https://plus.unsplash.com/premium_photo-1661933050836-3f9e3d7eda61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8ZmFjdG9yeSUyMGF1dG9tYXRpb258ZW58MHx8fHwxNzgxMTk4OTA0fDA&ixlib=rb-4.1.0&q=80&w=800',
+    image: '/images/industrial_automation_service.jpg',
     icon: Factory,
     shortDescription: 'Hydraulic-based industrial automation solutions for manufacturing, material handling, and process control.',
     overview: 'We bridge the gap between heavy hydraulic muscle and precise electronic control. By integrating electro-hydraulics, PLC controls, and modern sensor technology, we upgrade manual hydraulic machinery into fully automated, highly productive manufacturing systems.',

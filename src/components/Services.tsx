@@ -45,6 +45,7 @@ export default function Services() {
           stagger: 0.15,
           duration: 1,
           ease: 'power3.out',
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 55%',

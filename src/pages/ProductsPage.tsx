@@ -34,31 +34,15 @@ const catalogueItems = [
     id: '04',
     title: 'HYDRAULIC PUMP SERVICING',
     description: 'Expert servicing of all types of hydraulic pumps with genuine spare parts.',
-    image: 'https://images.pexels.com/photos/6876845/pexels-photo-6876845.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+    image: '/images/hydraulic_pump.png',
     icon: Wrench,
     color: 'from-orange-500 to-orange-700'
   },
   {
     id: '05',
-    title: 'HYDRAULIC EQUIPMENT MAINTENANCE',
-    description: 'Preventive maintenance and troubleshooting for all hydraulic equipment.',
-    image: 'https://plus.unsplash.com/premium_photo-1661515237084-640348f9ed3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8aW5kdXN0cmlhbCUy0bWFpbnRlbmFuY2V8ZW58MHx8fHwxNzgxMTk4OTA0fDA&ixlib=rb-4.1.0&q=80&w=800',
-    icon: Settings,
-    color: 'from-purple-500 to-purple-700'
-  },
-  {
-    id: '06',
-    title: 'HYDRAULIC SYSTEM DESIGN & INSTALLATION',
-    description: 'Complete hydraulic system designing, installation and commissioning.',
-    image: 'https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
-    icon: PenTool,
-    color: 'from-brand-500 to-brand-700'
-  },
-  {
-    id: '07',
     title: 'HYDRAULIC MANIFOLDS',
     description: 'Custom designed hydraulic manifolds for efficient and leak-free fluid routing.',
-    image: 'https://images.pexels.com/photos/1054397/pexels-photo-1054397.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+    image: '/images/manifold.jpg',
     icon: Layers,
     color: 'from-indigo-500 to-indigo-700'
   }

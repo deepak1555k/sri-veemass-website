@@ -47,7 +47,7 @@ const products = [
     title: 'Hydraulic Manifolds',
     subtitle: 'Fluid Control System',
     description: 'Custom designed and precision-machined hydraulic manifolds for optimal fluid routing and system efficiency.',
-    image: 'https://images.pexels.com/photos/1054397/pexels-photo-1054397.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+    image: '/images/manifold.jpg',
     specs: ['Custom Machining', 'Space Saving', 'Leak-Free Integration'],
     icon: Layers,
     accent: 'from-indigo-500 to-indigo-700',
@@ -83,12 +83,13 @@ export default function Products() {
         gsap.to(panels, {
           x: () => -totalWidth,
           ease: 'none',
+          force3D: true,
           scrollTrigger: {
             trigger: horizontalRef.current,
             start: 'center center',
             pin: true,
             pinSpacing: true,
-            scrub: 0.5,
+            scrub: 2.5,
             end: () => `+=${totalWidth}`,
             invalidateOnRefresh: true,
           },
@@ -149,22 +150,22 @@ export default function Products() {
 
       {/* Horizontal Scroll Container */}
       <div ref={horizontalRef} className="horizontal-scroll-section">
-        <div ref={panelsRef} className="horizontal-scroll-content">
+        <div ref={panelsRef} className="horizontal-scroll-content will-change-transform">
           {products.map((product, index) => {
             const Icon = product.icon;
             return (
               <div
                 key={product.title}
-                className="w-screen flex-shrink-0 flex items-center justify-center px-4 sm:px-6 lg:px-8"
+                className="w-screen h-[100dvh] flex-shrink-0 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden"
               >
-                <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
+                <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-6 lg:gap-12 items-center max-h-full overflow-y-auto no-scrollbar pb-10">
                   {/* Image */}
                   <div className={`panel-content relative rounded-3xl overflow-hidden shadow-2xl ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                     <div className={`absolute inset-0 bg-gradient-to-br ${product.accent} opacity-20`} />
                     <img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-[400px] lg:h-[500px] object-cover relative z-10 hover:scale-110 transition-transform duration-1000"
+                      className="w-full h-[250px] sm:h-[350px] lg:h-[500px] object-cover relative z-10 hover:scale-110 transition-transform duration-1000"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent z-10" />
                     <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
@@ -179,14 +180,14 @@ export default function Products() {
                   </div>
 
                   {/* Content */}
-                  <div className={`panel-content space-y-6 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div className="text-brand-400 font-outfit text-6xl font-bold opacity-20">
+                  <div className={`panel-content space-y-4 lg:space-y-6 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <div className="text-brand-400 font-outfit text-4xl lg:text-6xl font-bold opacity-20">
                       0{index + 1}
                     </div>
-                    <h3 className="font-outfit text-3xl lg:text-4xl font-bold text-white">
+                    <h3 className="font-outfit text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
                       {product.title}
                     </h3>
-                    <p className="text-gray-400 text-lg leading-relaxed">
+                    <p className="text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed">
                       {product.description}
                     </p>
                     <div className="flex flex-wrap gap-3">
