@@ -65,7 +65,8 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = {
       Date: new Date().toLocaleString(),
       Name: formData.get('name') || '',
@@ -92,7 +93,7 @@ export default function Contact() {
 
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 5000);
-      e.currentTarget.reset();
+      form.reset();
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('There was an error sending your message. Please try again or call us directly.');
