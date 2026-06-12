@@ -78,7 +78,7 @@ export default function Contact() {
     };
 
     try {
-      const res = await fetch('/api/contact', {
+      const sheetPromise = fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -87,8 +87,29 @@ export default function Contact() {
         body: JSON.stringify({ data: [data] })
       });
 
-      if (!res.ok) {
-        throw new Error('Network response was not ok');
+      const emailPromise = fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '1f35d5d0-22ce-4728-8c90-5d2409b7a33c',
+          subject: `New Lead: ${data.Service} - ${data.Name}`,
+          name: data.Name,
+          email: data.Email,
+          phone: data.Phone,
+          company: data.Company,
+          service: data.Service,
+          message: data.Message,
+          from_name: 'Sri Veemass Website'
+        })
+      });
+
+      const [sheetRes, emailRes] = await Promise.all([sheetPromise, emailPromise]);
+
+      if (!sheetRes.ok || !emailRes.ok) {
+        console.error("Submission failed", { sheet: sheetRes.status, email: emailRes.status });
       }
 
       setSubmitted(true);
