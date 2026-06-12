@@ -19,6 +19,7 @@ export default function Contact() {
   const infoRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -60,10 +61,40 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      Date: new Date().toLocaleString(),
+      Name: formData.get('name') || '',
+      Company: formData.get('company') || '',
+      Email: formData.get('email') || '',
+      Phone: formData.get('phone') || '',
+      Service: formData.get('service') || '',
+      Message: formData.get('message') || ''
+    };
+
+    try {
+      await fetch('https://sheetdb.io/api/v1/a2777p057fh26', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: [data] })
+      });
+
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 5000);
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error sending your message. Please try again or call us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -119,41 +150,41 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
-                      <input type="text" required placeholder="Your full name" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400" />
+                      <input name="name" type="text" required placeholder="Your full name" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Company</label>
-                      <input type="text" placeholder="Your company" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400" />
+                      <input name="company" type="text" placeholder="Your company" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
-                      <input type="email" required placeholder="email@example.com" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400" />
+                      <input name="email" type="email" required placeholder="email@example.com" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Phone *</label>
-                      <input type="tel" required placeholder="+91 XXXXX XXXXX" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400" />
+                      <input name="phone" type="tel" required placeholder="+91 XXXXX XXXXX" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Service Needed</label>
-                    <select className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800">
+                    <select name="service" className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800">
                       <option value="">Select a service</option>
-                      <option>Hydraulic Cylinder Manufacturing</option>
-                      <option>Hydraulic System Design</option>
-                      <option>Power Pack Solutions</option>
-                      <option>Repair & Maintenance</option>
-                      <option>Industrial Automation</option>
-                      <option>Other</option>
+                      <option value="Hydraulic Cylinder Manufacturing">Hydraulic Cylinder Manufacturing</option>
+                      <option value="Hydraulic System Design">Hydraulic System Design</option>
+                      <option value="Power Pack Solutions">Power Pack Solutions</option>
+                      <option value="Repair & Maintenance">Repair & Maintenance</option>
+                      <option value="Industrial Automation">Industrial Automation</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
-                    <textarea required rows={4} placeholder="Describe your requirements..." className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400 resize-none" />
+                    <textarea name="message" required rows={4} placeholder="Describe your requirements..." className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all text-gray-800 placeholder:text-gray-400 resize-none" />
                   </div>
-                  <button type="submit" className="group flex items-center justify-center gap-2 w-full px-8 py-4 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-semibold rounded-xl shadow-lg shadow-brand-500/25 transition-all duration-300 hover:scale-[1.02]">
-                    Send Message <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <button type="submit" disabled={loading} className="group flex items-center justify-center gap-2 w-full px-8 py-4 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-semibold rounded-xl shadow-lg shadow-brand-500/25 transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed">
+                    {loading ? 'Sending...' : 'Send Message'} <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </button>
                 </form>
               )}
