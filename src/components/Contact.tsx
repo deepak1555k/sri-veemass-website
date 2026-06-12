@@ -77,7 +77,7 @@ export default function Contact() {
     };
 
     try {
-      await fetch('https://sheetdb.io/api/v1/a2777p057fh26', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -85,6 +85,10 @@ export default function Contact() {
         },
         body: JSON.stringify({ data: [data] })
       });
+
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
 
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 5000);
