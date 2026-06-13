@@ -1,4 +1,4 @@
-import { LucideIcon, Settings, Truck, Building2, Package, Tractor, Anchor, Combine, Pickaxe, Hammer, Factory } from 'lucide-react';
+import { Settings, Building2, Package, Tractor, Anchor, Pickaxe, Hammer, Factory } from 'lucide-react';
 
 export interface IndustrySolution {
   title: string;
@@ -47,16 +47,24 @@ export const industriesData: Record<string, IndustryData> = {
     overview: 'The cement industry operates in extreme conditions involving heavy loads, constant vibration, and abrasive dust. Sri Veemass Hydraulics provides rugged, heavy-duty hydraulic components tailored for kilns, crushers, and material handling systems. Our robust hydraulic solutions guarantee continuous, reliable operation in the harshest cement plant environments.',
     keySolutions: [
       {
-        title: 'Kiln Drive Hydraulics',
-        description: 'High-torque hydraulic systems designed to maintain precise rotation for heavy rotary kilns.'
+        title: 'Ball Mill Hydraulic Drives',
+        description: 'Heavy-duty hydraulic drives designed to provide massive torque and reliable rotation for cement ball mills.'
       },
       {
-        title: 'Crusher Actuators',
-        description: 'Heavy-duty cylinders built to withstand extreme impact forces in limestone crushing operations.'
+        title: 'Power Packs & Servicing',
+        description: 'All kinds of custom power packs and comprehensive hydraulic servicing systems to keep cement plant operations running smoothly.'
       },
       {
-        title: 'Stacker & Reclaimer Systems',
-        description: 'Reliable hydraulic power packs and cylinders for bulk material handling machinery.'
+        title: 'Wagon Tippler & Tilting Systems',
+        description: 'Complete hydraulic clamping cylinders, drives, and power packs for bulk raw material unloading.'
+      },
+      {
+        title: 'Belt Tension Systems',
+        description: 'Belt tension power packs and cylinders for long-distance limestone and clinker conveyors.'
+      },
+      {
+        title: 'Chinese Mill Hydraulics',
+        description: 'Manufacturing, service, and power packs for Chinese mill systems used in raw material grinding.'
       }
     ]
   },
@@ -101,6 +109,18 @@ export const industriesData: Record<string, IndustryData> = {
       {
         title: 'Dock Leveler Hydraulics',
         description: 'Compact power packs and cylinders for smooth, safe loading dock operations.'
+      },
+      {
+        title: 'Wagon Tippler & Tilting Systems',
+        description: 'Complete hydraulic clamping cylinders, drives, and power packs for heavy-duty wagon unloading.'
+      },
+      {
+        title: 'Bucket Wheel & Conveyor Drives',
+        description: 'High-torque bucket wheel drives and belt tension power packs/cylinders for bulk material transport.'
+      },
+      {
+        title: 'Bottom Hopper Power Packs',
+        description: 'Reliable power packs and drives ensuring consistent operation of bottom hopper discharge systems.'
       }
     ]
   },
@@ -145,28 +165,40 @@ export const industriesData: Record<string, IndustryData> = {
       {
         title: 'Mooring System Hydraulics',
         description: 'Heavy-duty hydraulic winches and tensioning systems for secure vessel docking.'
+      },
+      {
+        title: 'Luffing Cylinders & Power Packs',
+        description: 'Heavy-duty luffing cylinders and power packs for precise boom control on ship-to-shore and harbor cranes.'
+      },
+      {
+        title: 'Operated Cabin Hydraulics',
+        description: 'Reliable power packs and cylinders for smooth, safe elevation and positioning of crane operator cabins.'
       }
     ]
   },
-  'rubber-plastics': {
-    id: 'rubber-plastics',
-    name: 'RUBBER & PLASTICS',
-    image: '/images/industry_rubber_plastics_1781249848838.png',
-    icon: Combine,
-    shortDescription: 'Powering the future of the rubber & plastics sector with precision engineering and unmatched reliability.',
-    overview: 'The rubber and plastics industries require immense pressure and precise temperature control. We manufacture high-pressure hydraulic cylinders and custom power packs tailored for injection molding machines, extruders, and vulcanizing presses. Our systems ensure consistent clamping force and rapid cycle times for high-quality production.',
+  hydroelectric: {
+    id: 'hydroelectric',
+    name: 'HYDROELECTRIC POWERPLANT',
+    image: '/images/industry_hydroelectric.png',
+    icon: Factory,
+    shortDescription: 'Powering the future of the hydroelectric sector with precision engineering and unmatched reliability.',
+    overview: 'Hydroelectric power generation demands fail-safe, high-pressure hydraulic systems capable of operating in extreme environments. Sri Veemass Hydraulics provides mission-critical servo cylinders, power units, and control manifolds that ensure the precise regulation of water flow and turbine speed. Our engineered solutions are designed for maximum safety, efficiency, and longevity in dam installations.',
     keySolutions: [
       {
-        title: 'Injection Molding Hydraulics',
-        description: 'High-speed, high-pressure clamping cylinders and injection unit actuators.'
+        title: 'OPU Power Packs & Manifolds',
+        description: 'Custom-designed Oil Pressure Units (OPU) and control manifolds for reliable turbine regulation.'
       },
       {
-        title: 'Press Automation Systems',
-        description: 'Complete hydraulic power and control systems for rubber vulcanizing presses.'
+        title: 'Deflector Oil Servo Cylinders',
+        description: 'High-precision servo cylinders engineered for rapid and accurate deflector control.'
       },
       {
-        title: 'Energy-Efficient Power Packs',
-        description: 'Variable displacement pump systems to reduce energy consumption during long molding cycles.'
+        title: 'Nozzle Valve Servo Cylinders',
+        description: 'Robust servo actuators providing exact control over nozzle valves to optimize turbine efficiency.'
+      },
+      {
+        title: 'Penstock Gate Control Systems',
+        description: 'Heavy-duty hydraulic cylinders paired with specialized manifolds and power packs for safe, reliable opening and closing of penstock gates.'
       }
     ]
   },
@@ -179,16 +211,24 @@ export const industriesData: Record<string, IndustryData> = {
     overview: 'Mining equipment is pushed to the absolute limits of mechanical endurance. We engineer hydraulic components that can survive extreme loads, abrasive dust, and continuous vibration. From dump trucks and excavators to drilling rigs, our mining hydraulic solutions are synonymous with rugged durability and uncompromising power.',
     keySolutions: [
       {
-        title: 'Ultra-Heavy Duty Cylinders',
-        description: 'Massive bore cylinders built for haul trucks and mining shovels.'
+        title: 'Boom Conveyors Cylinder',
+        description: 'Robust and reliable hydraulic cylinders designed specifically for boom conveyor systems.'
       },
       {
-        title: 'Drill Rig Hydraulics',
-        description: 'High-torque hydraulic motors and feed cylinders for surface and underground drilling.'
+        title: 'Heavy Equipment String Control Cylinder',
+        description: 'High-precision control cylinders for heavy-duty string and steering mechanisms.'
       },
       {
-        title: 'Pump Rebuilding Services',
-        description: 'Expert overhaul and testing of high-capacity hydraulic pumps used in mining operations.'
+        title: 'Power Packs & Servicing',
+        description: 'All kinds of custom power packs and comprehensive hydraulic servicing systems for uninterrupted mining operations.'
+      },
+      {
+        title: 'Wagon Tippler & Tilting Systems',
+        description: 'Heavy-duty clamping cylinders and hydraulic drives for ore unloading systems.'
+      },
+      {
+        title: 'Belt Tension Systems',
+        description: 'High-capacity belt tension power packs and cylinders for massive overland mining conveyors.'
       }
     ]
   },
@@ -214,25 +254,33 @@ export const industriesData: Record<string, IndustryData> = {
       }
     ]
   },
-  sugar: {
-    id: 'sugar',
-    name: 'SUGAR',
-    image: '/images/industry_sugar_1781249903936.png',
+  thermal: {
+    id: 'thermal',
+    name: 'THERMAL POWER',
+    image: '/images/industry_thermal.png',
     icon: Factory,
-    shortDescription: 'Powering the future of the sugar sector with precision engineering and unmatched reliability.',
-    overview: 'Sugar mills operate continuously during crushing season, where equipment failure can cause massive losses. We provide heavy-duty hydraulic solutions for cane crushers, mill drives, and material handling systems in sugar factories. Our robust designs ensure non-stop performance during critical operational periods.',
+    shortDescription: 'Powering the future of the thermal energy sector with precision engineering and unmatched reliability.',
+    overview: 'Thermal power plants operate under extreme conditions, requiring highly reliable components to ensure uninterrupted electricity generation. Sri Veemass Hydraulics provides robust, heavy-duty hydraulic solutions tailored for critical power plant operations. From coal handling systems to turbine controls, our systems guarantee maximum uptime and safety.',
     keySolutions: [
       {
-        title: 'Mill Roller Hydraulics',
-        description: 'High-pressure hydraulic loading systems ensuring maximum juice extraction from sugarcane.'
+        title: 'Hydraulic Brakes & Power Packs',
+        description: 'High-performance hydraulic braking systems and custom power packs for critical machinery control.'
       },
       {
-        title: 'Cane Unloader Systems',
-        description: 'Hydraulic grab and lifting systems for efficient sugarcane yard management.'
+        title: 'Reclaimer & Stacker',
+        description: 'Heavy-duty hydraulic actuators and control systems for efficient bulk material handling.'
       },
       {
-        title: 'Seasonal Overhaul Services',
-        description: 'Comprehensive off-season maintenance programs to prepare your mill hydraulics for the next crush.'
+        title: 'Rail Clamps & Power Packs',
+        description: 'Fail-safe hydraulic rail clamp systems powered by reliable, high-pressure power packs for securing heavy equipment.'
+      },
+      {
+        title: 'Turbine Bypass Systems',
+        description: 'High pressure (HP) and low pressure (LP) bypass power pack systems and accumulators for critical steam turbine control.'
+      },
+      {
+        title: 'Coal Mill Hydraulics',
+        description: 'Chinese mill hydraulic power packs, manufacturing, service, and Hydraulic Adjustment Devices (HAD).'
       }
     ]
   }

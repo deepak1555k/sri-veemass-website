@@ -10,6 +10,7 @@ import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Contact from '../components/Contact';
 import Industries from '../components/Industries';
+import Clients from '../components/Clients';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,6 +57,7 @@ export default function HomePage() {
         title="Trusted by Industry Leaders"
         subtitle="Powering critical operations across 200+ companies worldwide with precision hydraulic systems."
       />
+      <Clients />
       <WhyUs />
       <Testimonials />
       <CTA />

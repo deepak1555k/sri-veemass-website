@@ -123,6 +123,18 @@ export const servicesData: Record<string, ServiceData> = {
       {
         title: 'Custom Machining',
         description: 'In-house fabrication of specialized pistons, glands, and obsolete components.'
+      },
+      {
+        title: 'Complete Service & Supply',
+        description: 'All kinds of hydraulic service, supply, and maintenance for industrial systems of any scale.'
+      },
+      {
+        title: 'Sleeve Hydraulic Drives & Custom Systems',
+        description: 'In-house manufacturing, repair, and supply of specialized power packs including sleeve hydraulic drives.'
+      },
+      {
+        title: 'Chinese Mill Manufacturing & Service',
+        description: 'Complete manufacturing, repair, and service support for Chinese mill hydraulic power packs and systems.'
       }
     ]
   },
@@ -135,16 +147,16 @@ export const servicesData: Record<string, ServiceData> = {
     overview: 'We bridge the gap between heavy hydraulic muscle and precise electronic control. By integrating electro-hydraulics, PLC controls, and modern sensor technology, we upgrade manual hydraulic machinery into fully automated, highly productive manufacturing systems.',
     keyFeatures: [
       {
-        title: 'Electro-Hydraulic Integration',
-        description: 'Upgrading manual systems with proportional valves and electronic joysticks/controllers.'
+        title: 'SPM & Hydraulic Presses',
+        description: 'Custom design and automation of Special Purpose Machines (SPM) and heavy-duty hydraulic presses for specialized operations.'
       },
       {
-        title: 'PLC System Integration',
-        description: 'Programming and implementing programmable logic controllers for complex hydraulic sequencing.'
+        title: 'PLC Electrical Control Panels',
+        description: 'Complete manufacturing, wiring, and programming of PLC electrical control panels to intelligently manage complex hydraulic systems.'
       },
       {
-        title: 'Sensor & Feedback Systems',
-        description: 'Installing linear transducers and pressure sensors for closed-loop, highly accurate positioning.'
+        title: 'Comprehensive Hydraulic Manufacturing',
+        description: 'End-to-end manufacturing and automation solutions for all kinds of hydraulic equipment, customized to your specific production needs.'
       }
     ]
   }
